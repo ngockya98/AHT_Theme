@@ -1,0 +1,17 @@
+<?php
+
+$phone = $block->getPhone();
+$email = $block->getEmail();
+?>
+<div class="header-info">
+	<ul>
+		<li> 
+			<i class="fa fa-phone" aria-hidden="true"></i>
+		 	<?= $block->escapeHtml($phone) ?>
+		</li>
+		<li>
+			<i class="fa fa-envelope-o" aria-hidden="true"></i>
+			<?= $block->escapeHtml($email) ?>
+		</li>
+	</ul>
+</div>

@@ -2,3 +2,72 @@
 //Fonts
 //
 @font-family-name__base: 'Lato';
+
+//
+//Color
+//
+@_color-background-header: #3a3a3c;
+@_color-header-info: #afafaf;
+
+//Header
+//
+.page-header{
+	background-color: @_color-background-header;
+	a,p{
+			color: @color-white;
+		}
+	.panel.header{
+		margin-left: 0;
+		margin-right: 0;
+		.header-info{
+			width: 50%;
+			float: left;
+			font-size: 13px;
+			color: @_color-header-info;
+			ul{
+				list-style:none;
+				li{
+					i{
+						margin-right: 5px;
+					}
+					display:inline-block;
+					&:first-child{
+						padding-right: 20px;
+						border-right: solid 2px @_color-header-info;
+						line-height: 14px;
+					}
+					&:nth-child(2){
+						padding-left: 20px;
+					}
+				}
+			}
+		}
+		.header.links{
+			li{
+				line-height: 14px;
+				margin: 0px;
+			}
+			li:not(:last-child){
+				border-right: solid 1px @_color-header-info;
+				padding-right: 12px;
+			}
+			li:not(:first-child){
+				padding-left: 10px;
+			}
+		}
+	}
+	.panel.wrapper{
+		border-bottom: none;
+		background-color: @color-black;
+		height: 40px;
+	}
+	.header.content{
+		padding: 25px 0px 20px 0px;
+		height: 80px;
+		.logo{
+			margin-left: -80px;
+			left: 50%;
+		}
+	}
+	
+}

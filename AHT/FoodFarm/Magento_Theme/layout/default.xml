@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!-- <update handle="default_head_blocks"/> -->
+    <body>
+        <referenceBlock name="header.links">
+            <block class="AHT\FoodFarm\Block\Link" name="checkout">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Checkout</argument>
+                    <argument name="path" xsi:type="string">checkout</argument>
+                 </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo1.png</argument>
+                <argument name="logo_img_width" xsi:type="number">201</argument>
+                <argument name="logo_img_height" xsi:type="number">35</argument>
+            </arguments>
+        </referenceBlock>
+         <referenceContainer name="header.container">
+            <referenceContainer name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div">
+                <referenceContainer name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header">
+                    <block class="Magento\Framework\View\Element\Template" name="header-info" template="Magento_Theme::html/headerinfo.phtml" before="-">
+                        <arguments>
+                                <argument name="phone" xsi:type="string">(+84)1234-5678</argument>
+                                <argument name="email" xsi:type="string">contac@yourdomain.com</argument>
+                        </arguments>
+                    </block>
+                   <referenceBlock name="top.links">
+                        <referenceBlock name="register-link" remove="true" />
+                        <referenceBlock name="wish-list-link" remove="true" />
+                    </referenceBlock>
+                </referenceContainer>
+            </referenceContainer>
+        </referenceContainer>
+        <referenceContainer name="header.container">
+            <referenceBlock name="top.search" remove="true" />
+            <referenceBlock name="minicart" remove="true" />
+        </referenceContainer>
+    </body>
+</page>
