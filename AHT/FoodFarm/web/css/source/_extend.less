@@ -6,16 +6,20 @@
 //
 //Color
 //
-@_color-background-header: #3a3a3c;
+@_color-theme-second: #b7dc36;
+@_color-background-partial: #3a3a3c;
 @_color-header-info: #afafaf;
+@_color-footer-info: #afafaf;
+@_color-narbar-menu: #969696;
+@_color-narbar-menu-active: @color-white;
 
 //Header
 //
 .page-header{
-	background-color: @_color-background-header;
+	background-color: @_color-background-partial;
 	a,p{
-			color: @color-white;
-		}
+		color: @color-white;
+	}
 	.panel.header{
 		margin-left: 0;
 		margin-right: 0;
@@ -69,5 +73,185 @@
 			left: 50%;
 		}
 	}
+	.sections.nav-sections{
+		background-color: @_color-background-partial;
+		font-family: 'Lato-Bold';
+		margin-bottom: 0;
+		height: 55px;
+		border-top: dashed 1px #464647;
+
+		.navigation{
+			li{
+				margin-right: 0;
+				border-left: dashed 1px #464647;
+				&:last-child{
+					border-right: dashed 1px #464647;
+				}
+				a{
+					text-transform: uppercase;
+					line-height: 10px;
+					padding: 20px 22px 20px 25px;
+				}
+			}
+
+			background-color: @_color-background-partial;
+			.level0.submenu a{
+				color: @_color-narbar-menu;
+			}
+			.level0.submenu .active > a{
+				color: @_color-narbar-menu-active;
+				border-color: @_color-theme-second;
+				border-width: 0 0 0 5px;
+			}
+			.level0 > .level-top{
+				color: @_color-narbar-menu;
+			}
+			.level0.active > .level-top{
+				color: @_color-narbar-menu-active;
+				border-width: 0 0 5px;
+				border-color: @_color-theme-second;
+			}
+			.level0.has-active > .level-top{
+				color: @_color-narbar-menu-active;
+				border-width: 0 0 5px;
+				border-color: @_color-theme-second;
+			}
+		}
+	}
 	
+}
+
+//
+//Footer
+//
+.set-width-box(@width){
+	display: block;
+	width: @width;
+	float: left;
+}
+.set-icon-footer(@color, @icon){
+	&:before{
+		font-family: fontawesome;
+		content: @icon;
+		color: @color;
+		margin-right: 10px;
+	}	
+}
+.page-footer{
+	.footer.content{
+		width: 100%;
+		padding: 0;
+		margin-top: 60px;
+
+	}
+	font-family: @font-family-name__base;
+	background-color: @_color-background-partial;
+	.footer.content{
+		border-top : none;
+		.about-us{
+			.set-width-box(33.33%);
+			img{
+				width: 180px;
+				height: 32px;
+			}
+			.content{
+				margin-top: 15px;
+				margin-bottom: 30px;
+				color: @color-white;
+				width: 75%;
+			}
+			.info{
+				li{
+					margin-bottom: 17px;
+				}
+				color: @_color-footer-info;
+				.address{
+					.set-icon-footer(@_color-theme-second, "\f041");
+				}
+				.phone{
+					.set-icon-footer(@_color-theme-second, "\f095");
+				}
+				.fax{
+					.set-icon-footer(@_color-theme-second, "\f1ac");
+				}
+				.email{
+					.set-icon-footer(@_color-theme-second, "\f0e0");
+				}
+			}
+		}
+	}
+	.footer-main{
+		.set-width-box(66.67%);
+		.menu{
+			.category, .infomation, .policies, .find-us{
+				.set-width-box(25%);
+				h4{
+					text-transform: uppercase;
+					color: @color-white;
+					font-size: 16px;
+					margin-top: 0;
+					&:after{
+						content: " ";
+						width: 23px;
+						height: 2px;
+						background-color: @_color-theme-second;
+						margin-top: 17px;
+						display: block;
+					}
+				}
+				ul{
+					li{								
+						margin-bottom: 15px;
+						a{
+							color: @_color-footer-info;
+						}
+						&:hover{
+							a{
+								text-decoration: none;
+								color: @_color-theme-second;
+							}								
+						}
+					}
+				}
+			}
+			.find-us{
+				ul{
+					li{
+						&:first-child{
+							.set-icon-footer(@_color-footer-info, "\f082");
+						}
+						&:nth-child(2){
+							.set-icon-footer(@_color-footer-info, "\f081");
+						}
+						&:nth-child(3){
+							.set-icon-footer(@_color-footer-info, "\f0d4");
+						}
+						&:nth-child(4){
+							.set-icon-footer(@_color-footer-info, "\f166");
+						}
+						&:nth-child(5){
+							.set-icon-footer(@_color-footer-info, "\f08c");
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.copyright{
+	background-color: #2d2d2e;
+	.copyright-content{
+		display: block;
+		float: left;
+		color: @_color-footer-info;
+		max-width: 1280px;
+		.left{
+			float: left;
+			width: 50%;
+		}
+		.right{
+			float: right;
+			width: 50%;
+		}
+	}
 }
