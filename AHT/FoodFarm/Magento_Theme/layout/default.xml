@@ -60,6 +60,9 @@
         <referenceContainer name="page.wrapper">
                 <block class="Magento\Theme\Block\Html\Footer" name="footer-copyright" template="html/footer-copyright.phtml"/>
         </referenceContainer>
+        
         <move element="footer-copyright" destination="page.wrapper" after="-"/>
+        <referenceBlock name="page.main.title" remove="true"/>
+        <!-- <move element="form.subscribe" destination="footer_catalog_block" after="-"/> -->
     </body>
 </page>
