@@ -48,6 +48,25 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
             <li class="item product product-item">
                 <div class="product-item-info" data-container="product-<?= /* @noEscape */ $viewMode ?>">
                     <?php
+                    $specialprice = $_product->getSpecialPrice();
+                        $specialPriceFromDate = $_product->getSpecialFromDate();
+                        $specialPriceToDate = $_product->getSpecialToDate();    
+                        $today = time();
+                        $price = $_product->getPrice();
+                        if($price){
+                            $sale = round((($price-$specialprice)/$price)*100);
+                        }
+                        if ($specialprice) {
+                            if ($today >= strtotime($specialPriceFromDate) && $today <= strtotime($specialPriceToDate) || $today >= strtotime($specialPriceFromDate) && is_null($specialPriceToDate)) { ?>
+                                <div class="label-product label-sale">
+                                    <span class="sale-product-icon">
+                                        <?php if($sale) { echo $sale.'%'; } else {echo __('Sale');} ?>
+                                    </span>
+                                </div>
+                            <?php }
+                        }
+                    ?>
+                    <?php
                     $productImage = $block->getImage($_product, $imageDisplayArea);
                     if ($pos != null) {
                         $position = ' style="left:' . $productImage->getWidth() . 'px;'

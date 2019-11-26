@@ -62,7 +62,8 @@
         </referenceContainer>
         
         <move element="footer-copyright" destination="page.wrapper" after="-"/>
-        <referenceBlock name="page.main.title" remove="true"/>
-        <!-- <move element="form.subscribe" destination="footer_catalog_block" after="-"/> -->
+        <move element="page.main.title" destination="breadcrumbs" before="-"/>
+        <!-- <referenceBlock name="page.main.title" remove="true"/> -->
+        
     </body>
 </page>

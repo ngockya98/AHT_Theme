@@ -6,7 +6,7 @@
 ?>
 <?php if ($crumbs && is_array($crumbs)) : ?>
 <div class="breadcrumbs">
-    <p class="title">Products <span class="type">Grid</span></p>
+    <?php echo $block->getChildHtml('page.main.title'); ?>
     <ul class="items">
         <?php foreach ($crumbs as $crumbName => $crumbInfo) : ?>
             <li class="item <?= $block->escapeHtmlAttr($crumbName) ?>">
