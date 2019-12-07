@@ -1,11 +1,11 @@
 var config = {
 	map: {
         '*': {
-            owlCarousel: 'js/owl.carousel'
+            slideSlick: 'js/slick'
         }
     },
     shim: {
-        owlCarousel: {
+        slideSlick: {
             deps: ['jquery']
         }
     }
