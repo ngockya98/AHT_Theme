@@ -43,13 +43,13 @@ $showSlide = true;
 
                         <?php endif; ?>
                         <div class="product-item-info">
-                         <?php
-                         $specialprice = $_item->getSpecialPrice();
-                         $specialPriceFromDate = $_item->getSpecialFromDate();
-                         $specialPriceToDate = $_item->getSpecialToDate();    
-                         $today = time();
-                         $price = $_item->getPrice();
-                         if($price){
+                           <?php
+                           $specialprice = $_item->getSpecialPrice();
+                           $specialPriceFromDate = $_item->getSpecialFromDate();
+                           $specialPriceToDate = $_item->getSpecialToDate();    
+                           $today = time();
+                           $price = $_item->getPrice();
+                           if($price){
                             $sale = round((($price-$specialprice)/$price)*100);
                         }
                         if ($specialprice) {
@@ -77,7 +77,7 @@ $showSlide = true;
                         </a>
                         <div class="product-item-details">
 
-                           <?php if ($showWishlist || $showCompare || $showCart) : ?>
+                         <?php if ($showWishlist || $showCompare || $showCart) : ?>
                             <div class="product-item-inner">
                                 <div class="product-item-actions">
                                     <?php if ($showCart) : ?>
@@ -123,13 +123,13 @@ $showSlide = true;
                         </div>
                         <strong class="product-item-name">
                             <a title="<?= $block->escapeHtml($_item->getName()) ?>"
-                               href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
-                               class="product-item-link">
-                               <?= $block->escapeHtml($_item->getName()) ?>
-                           </a>
-                       </strong>
-                   <?php endif; ?>
-                   <?php if ($templateType) : ?>
+                             href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
+                             class="product-item-link">
+                             <?= $block->escapeHtml($_item->getName()) ?>
+                         </a>
+                     </strong>
+                 <?php endif; ?>
+                 <?php if ($templateType) : ?>
                     <?= $block->getReviewsSummaryHtml($_item, $templateType) ?>
                 <?php endif; ?>
 
@@ -146,52 +146,3 @@ $showSlide = true;
 </div>
 </div>
 <?php endif;?>
-<script type="text/javascript">
-   require(["jquery","slideSlick"],function($,slideSlick) {
-    $(document).ready(function(){
-        $('.slide-slick').slick({
-          dots: false,
-          infinite: true,
-          speed: 300,
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          responsive: [
-          {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-            }
-        },
-        {
-          breakpoint: 800,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3
-        }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-    }
-},
-{
-    breakpoint: 400 ,
-    settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-    }
-}
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-    ]
-});
-    $('.banner-slide').slick({
-        dots: true
-    });
-    });
-});
-</script>
