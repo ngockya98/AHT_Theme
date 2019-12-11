@@ -69,7 +69,7 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                         <?php 
                         $featured = $_product->getData('featured');
 
-                        if($featured){ ?>
+                        if($featured == 0){ ?>
                             <div class="label-product label-featured">
                                 <span class="featured-product-icon">
                                     <?php echo __('Hot'); ?>

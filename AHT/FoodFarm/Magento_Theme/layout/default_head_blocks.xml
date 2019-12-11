@@ -5,5 +5,6 @@
         <css src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" src_type="url"/>
         <css src="css/slick/slick-theme.css"/>
         <css src="css/slick/slick.css"/>
+        <link src="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" src_type="url"/>
     </head>
 </page>

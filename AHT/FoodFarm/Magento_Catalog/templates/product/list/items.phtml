@@ -174,7 +174,7 @@ switch ($type = $block->getType()) {
                     </div>
                     <?php endif; ?> -->
                     <div class="products wrapper grid products-grid products-<?= $block->escapeHtmlAttr($type) ?>">
-                        <ol class="products list items product-items">
+                        <ol class="products list items product-items slide-slick">
                             <?php foreach ($items as $_item) :?>
                                 <?php $available = ''; ?>
                                 <?php if (!$_item->isComposite() && $_item->isSaleable() && $type == 'related') :?>
@@ -210,7 +210,7 @@ switch ($type = $block->getType()) {
                                             <?php 
                                             $featured = $_item->getData('featured');
 
-                                            if($featured){ ?>
+                                            if($featured == 0){ ?>
                                                 <div class="label-product label-featured">
                                                     <span class="featured-product-icon">
                                                         <?php echo __('Hot'); ?>

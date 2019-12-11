@@ -7,8 +7,8 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <attribute name="class" value="page-with-filter"/>
-        <referenceContainer name="sidebar.main">
+        <!-- <attribute name="class" value="page-with-filter"/> -->
+        <!-- <referenceContainer name="sidebar.main">
             <container name="recent.product" label="Recent Product Container" htmlTag="div" htmlClass="recent-product-box">
                 <block class="Magento\Reports\Block\Product\Widget\Viewed" after="-" name="recently_viewed" cacheable="false" template="Magento_Reports::widget/viewed/content/viewed_grid.phtml">
                     <action method="setPageSize">
@@ -16,6 +16,6 @@
                     </action>
                 </block>
             </container>
-        </referenceContainer>
+        </referenceContainer> -->
     </body>
 </page>

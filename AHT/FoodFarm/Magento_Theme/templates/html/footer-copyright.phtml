@@ -53,24 +53,25 @@
 });
 			$('.banner-slide').slick({
 				dots: true,
-				autoplay: true,
-				autoplaySpeed: 3500
+				//autoplay: true,
+				//autoplaySpeed: 3500
 			});
 			$('.testimonals-slide').slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				arrows: false,
 				asNavFor: '.img-dot-slide',
-				autoplay: true,
-				autoplaySpeed: 3500
+				// autoplay: true,
+				// autoplaySpeed: 3500
 			});
 			$('.img-dot-slide').slick({
 				slidesToShow: 10,
 				slidesToScroll: 10,
 				asNavFor: '.testimonals-slide',
 				focusOnSelect: true,
-				autoplay: true,
-				autoplaySpeed: 3500
+				centerMode: true,
+				// autoplay: true,
+				// autoplaySpeed: 3500
 			});
 		});
 	});

@@ -35,11 +35,11 @@
                 </referenceContainer>
             </referenceContainer>
         </referenceContainer>
-        <referenceContainer name="page.wrapper">
+        <!-- <referenceContainer name="page.wrapper">
             <container name="end-home-page-newsletter" htmlTag="div" htmlClass="home-newsletter" before="footer-container">
                 <block class="Magento\Newsletter\Block\Subscribe" name="home-newsletter" template="Magento_Newsletter::subscribe.phtml" />
             </container>
-        </referenceContainer>
+        </referenceContainer> -->
         <move element="navigation.sections" destination="header.container"/>
         <referenceBlock name="footer_links" remove="true" />
 <!--         <referenceBlock name="top.search" template="html/mini-search.phtml">

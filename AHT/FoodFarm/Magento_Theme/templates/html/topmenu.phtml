@@ -1,0 +1,47 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+
+$columnsLimit = $block->getColumnsLimit() ?: 0;
+$_menuHtml = $block->getHtml('level-top', 'submenu', $columnsLimit)
+?>
+
+<nav class="navigation menu-storehome" data-action="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <?= /* @noEscape */ $_menuHtml?>
+        <?= $block->getChildHtml("catalog.topnav") ?>
+        <li class="search-menu level0" data-block="dropdown">
+            <small class="action" data-trigger="trigger">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </small>
+        </li>
+        <div style="position: absolute; display: none;" class="block block-search"
+            data-mage-init='{
+                "dropdownDialog": {
+                    "appendTo": "[data-block=dropdown]",
+                    "triggerTarget":"[data-trigger=trigger]",
+                    "timeout": 2000,
+                    "closeOnMouseLeave": false,
+                    "closeOnEscape": true,
+                    "autoOpen": false,
+                    "triggerClass": "active",
+                    "parentClass": "active",
+                    "buttons": []
+                }
+            }'>
+            <div id="search-content-wrapper">
+                <?php echo $this->getChildHtml('topSearch') ?>
+            </div>
+        </div>
+        
+        <li class="minicart-shopping level0"><?php echo $this->getChildHtml("minicart"); ?></li>
+    </ul>
+</nav>

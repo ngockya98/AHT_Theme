@@ -32,7 +32,7 @@ $showSlide = true;
     <div class="block-content">
         <?= /* @noEscape */ '<!-- ' . $image . '-->' ?>
         <div class="products-<?= /* @noEscape */ $mode ?> <?= /* @noEscape */ $mode ?>">
-            <ol id="test1" class="product-items <?= /* @noEscape */ $type ?> <?php if($showSlide){echo "slide-slick";} ?>">
+            <ol class="product-items <?= /* @noEscape */ $type ?> <?php if($showSlide){echo "slide-slick";} ?>">
                 <?php $iterator = 1; ?>
                 <?php foreach ($items as $_item) : ?>
                     <?php if(!$showSlide) : ?>
