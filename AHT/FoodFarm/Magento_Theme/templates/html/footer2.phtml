@@ -1,0 +1,45 @@
+<div class="bg-footer"></div>
+<div class="footer-content ">
+    <div class="page-main">
+        <div class="footer-logo">
+            <figure>
+                <?php echo $this->getLayout()->createBlock("Magento\Theme\Block\Html\Header\Logo")->setTemplate("Magento_Theme::html/header/logo.phtml")->toHtml(); ?>
+            </figure>
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-content')->toHtml(); ?>  
+        </div>
+        <div class="footer-links">
+            <div class="links-item">
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-link-block-1')->toHtml(); ?>
+            </div>
+            <?php /** @var \Magento\Newsletter\Block\Subscribe $block */?>
+            <div class="block newsletter">
+                <div class="pdnewsletter">
+                    <div class="title"><strong><?= $block->escapeHtml(__('Signup Newsletter')) ?></strong></div>
+                    <div class="content">
+                        <form class="form subscribe"
+                        novalidate
+                        action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+                        method="post"
+                        data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                        id="newsletter-validate-detail">
+                        <div class="field newsletter">
+                            <label class="label" for="newsletter"><span><?= $block->escapeHtml(__('Sign Up for Our Newsletter:')) ?></span></label>
+                            <div class="control">
+                                <input name="email" type="email" id="newsletter"
+                                placeholder="<?= $block->escapeHtmlAttr(__('Enter your email')) ?>"
+                                data-validate="{required:true, 'validate-email':true}"/>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="action subscribe primary" title="<?= $block->escapeHtmlAttr(__('Subscribe')) ?>" type="submit">
+                                <span><?= $block->escapeHtml(__('Subscribe')) ?></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <?= $block->getChildHtml(); ?>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

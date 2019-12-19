@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+    <ul class="extra-menu">
+        <li class="search-menu" data-block="dropdown-mobile">
+            <small class="action" data-trigger="trigger-mobile">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </small>
+        </li>
+        <div style="position: absolute; display: none;" class="block block-search"
+            data-mage-init='{
+                "dropdownDialog": {
+                    "appendTo": "[data-block=dropdown-mobile]",
+                    "triggerTarget":"[data-trigger=trigger-mobile]",
+                    "timeout": 2000,
+                    "closeOnMouseLeave": false,
+                    "closeOnEscape": true,
+                    "autoOpen": false,
+                    "triggerClass": "active",
+                    "parentClass": "active",
+                    "buttons": []
+                }
+            }'>
+            <div id="search-content-wrapper-mobile">
+                <?php echo $this->getLayout()
+                                            ->createBlock('Magento\Framework\View\Element\Template')
+                                            ->setTemplate('Magento_Search::form.mini.phtml')
+                                            ->toHtml(); ?>
+            </div>
+        </div>
+        
+        <li class="minicart-shopping"><?php  echo $this->getLayout()
+                                                      ->createBlock('Magento\Checkout\Block\Cart\Sidebar')
+                                                      ->setTemplate('Magento_Checkout::cart/minicart.phtml')
+                                                      ->toHtml(); ?>  
+        </li>
+    </ul>

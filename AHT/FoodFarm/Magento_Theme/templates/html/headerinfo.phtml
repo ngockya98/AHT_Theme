@@ -1,17 +1,14 @@
-<?php
-
-$phone = $block->getPhone();
-$email = $block->getEmail();
-?>
 <div class="header-info">
 	<ul>
 		<li> 
-			<i class="fa fa-phone" aria-hidden="true"></i>
-		 	<?= $block->escapeHtml($phone) ?>
+			<a href="#"><i class="fa fa-phone" aria-hidden="true"></i>
+				<?= $block->getPhoneNumber() ?>
+			</a>
 		</li>
 		<li>
-			<i class="fa fa-envelope-o" aria-hidden="true"></i>
-			<?= $block->escapeHtml($email) ?>
+			<a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i>
+				<?= $block->getEmailUs() ?>
+			</a>
 		</li>
 	</ul>
 </div>
