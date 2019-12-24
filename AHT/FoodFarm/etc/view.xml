@@ -3,11 +3,11 @@
 		<images module="Magento_Catalog">
 			<image id="category_page_grid" type="small_image">
 				<width>260</width>
-				<height>260</height>
+				<!-- <height>260</height> -->
 			</image>
 			<image id="category_page_list" type="small_image">
 				<width>260</width>
-				<height>260</height>
+				<!-- <height>260</height> -->
 			</image>
 		</images>
 	</media>

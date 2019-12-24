@@ -37,28 +37,77 @@
 					<block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="related.product.addto" as="addto">
 						<block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
 							name="related.product.addto.compare" as="compare"
+							template="Magento_Catalog::product/list/addto/compare.phtml">
+						</block>
+					</block>
+				</block>
+				<block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="product/list/items.phtml">
+					<arguments>
+						<argument name="type" xsi:type="string">upsell</argument>
+					</arguments>
+					<block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="upsell.product.addto" as="addto">
+						<block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
+							name="upsell.product.addto.compare" as="compare"
 							template="Magento_Catalog::product/list/addto/compare.phtml"/>
 						</block>
 					</block>
-					<block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="product/list/items.phtml">
+					<block class="Magento\Catalog\Block\Product\View\Additional" name="product.info.additional" as="product_additional_data"/>
+				</container>
+				<container name="bottom-banner" htmlTag="div" htmlClass="bottom-banner" after="content.product">
+					<block class="Magento\Cms\Block\Block" name="block-shipping-order" after="-">
 						<arguments>
-							<argument name="type" xsi:type="string">upsell</argument>
+							<argument name="block_id" xsi:type="string">block-shipping-order</argument>
 						</arguments>
-						<block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="upsell.product.addto" as="addto">
-							<block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
-								name="upsell.product.addto.compare" as="compare"
-								template="Magento_Catalog::product/list/addto/compare.phtml"/>
-							</block>
-						</block>
-						<block class="Magento\Catalog\Block\Product\View\Additional" name="product.info.additional" as="product_additional_data"/>
-					</container>
-					<container name="bottom-banner" htmlTag="div" htmlClass="bottom-banner" after="content.product">
-						<block class="Magento\Cms\Block\Block" name="block-shipping-order" after="-">
-							<arguments>
-								<argument name="block_id" xsi:type="string">block-shipping-order</argument>
-							</arguments>
-						</block>
-					</container>
-				</referenceContainer>
-			</body>
-		</page>
+					</block>
+				</container>
+			</referenceContainer>
+			<!-- <referenceBlock name="product.info.details">
+				<block class="Magento\Catalog\Block\Product\View" name="test.tab" template="Magento_Catalog::custom_tab.phtml" group="detailed_info" >
+					<arguments>
+						<argument name="priority" xsi:type="string">5</argument>
+						<argument translate="true" name="title" xsi:type="string">Custom Tab</argument>
+					</arguments>
+				</block>
+			</referenceBlock> -->
+			<referenceBlock name="product.info.details">
+				<referenceBlock name="product.info.description">
+					<arguments>
+						<argument name="priority" xsi:type="string">1</argument>
+					</arguments>
+				</referenceBlock>
+				<referenceBlock name="product.attributes">
+					<arguments>
+						<argument name="priority" xsi:type="string">2</argument>
+					</arguments>
+				</referenceBlock>
+				<referenceBlock name="reviews.tab">
+					<arguments>
+						<argument name="priority" xsi:type="string">3</argument>
+					</arguments>
+				</referenceBlock>
+				<!-- MY OWN CUSTOM BLOCK ON THE SECOND POSITION -->
+				<block class="Magento\Catalog\Block\Product\View\Description" name="product.features" as="features" template="product/view/features.phtml" group="detailed_info">
+					<arguments>
+						<argument translate="true" name="title" xsi:type="string">Product Tag</argument>
+						<argument name="priority" xsi:type="string">4</argument>
+					</arguments>
+				</block>
+				<block class="Magento\Catalog\Block\Product\View" name="categoryinfo.tab" as="categoryinfo" template="Magento_Catalog::custom_tab.phtml" group="detailed_info">
+					<arguments>
+						<argument translate="true" name="title" xsi:type="string">Custom Tab</argument>
+						<argument name="priority" xsi:type="string">5</argument>
+					</arguments>
+				</block>
+
+				<!-- Custom static blocks as tabs --> 
+				
+				
+				<!-- MY OWN CUSTOM BLOCK ENDS HERE -->
+			</referenceBlock>   
+			<!-- <referenceBlock name="breadcrumbs">
+				<block class="Magento\Theme\Block\Html\Breadcrumbs" name="subtitle" template="Magento_Catalog::product/view/subtitle.phtml" after="-"/>
+			</referenceBlock> -->
+			<!-- <move element="page.main.title" destination="breadcrumbs" before="-"/> -->
+			<!-- <move element="test.tab" destination="product.info.details" after="reviews.tab"/> -->
+		</body>
+	</page>

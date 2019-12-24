@@ -1,0 +1,24 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+/** @var \Magento\Theme\Block\Html\Breadcrumbs $block */
+/** @var \Magento\Catalog\ViewModel\Product\Breadcrumbs $viewModel */
+$viewModel = $block->getData('viewModel');
+?>
+<div class="breadcrumbs">
+	<div class="page-title-wrapper"><h1 class="page-title" id="page-title-heading" aria-labelledby="page-title-heading toolbar-amount"><span class="base" data-ui-id="page-title-wrapper" >Out Product</span></h1></div>
+</div>
+<!-- <script type="text/x-magento-init">
+        {
+            ".breadcrumbs": <?= $viewModel->getJsonConfigurationHtmlEscaped() ?>
+        }
+</script> -->
+<script>
+	require(["jquery"],function($){
+		$(document).ready(function(){
+			$('.breadcrumbs.items').before("sdsd");
+		});
+	});
+</script>
